@@ -1,0 +1,14 @@
+data/*.gz
+venv/
+
+Dockerfile
+Makefile
+README.md
+freeportfinder.sh
+
+.dockerignore
+.git/
+.git*
+*.pyc
+.vscode/
+
