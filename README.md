@@ -1,33 +1,27 @@
 ## Webapp for visualizing word2vec/GloVe-style word embeddings
 
+Based on Daniel Varga's [word2vec-web-visualization](https://github.com/danielvarga/word2vec-web-visualization) repository.
+
+### Requirements
+
+* [git lfs](https://git-lfs.github.com/)
+* python2
+* [virtualenv](https://virtualenv.pypa.io/en/latest/)
+
 ### Installation
 
 ```
-sudo pip install numpy scipy scikit-learn annoy
+git lfs clone https://github.com/dlt-rilmta/embedding-demo.git
+cd embedding-demo
+make setup
 ```
 
 ### Starting the webservice
 
 ```
-Arguments:
-  -h, --help          show this help message and exit
-  --glove GLOVE       filename of word embedding data file or serialized
-                      GloveService. If the filename ends with .txt, it's
-                      interpreted as word embedding data file, otherwise two
-                      files are looked for, filename.ann and filename.json.
-                      This argument is mandatory.
-  --port PORT         port of service.
-  --globalProjection  use a single SVD for the whole dataset instead of always
-                      building it from local data. Can be overridden with
-                      /glove/?q=query&globalProjection=0
+make run
 ```
 
-Example:
-```
-python server.py --glove glove.840B.50k.300d.txt --port 8080
-```
-
-See below for details about where to get such data files from.
 After starting the server, please wait until the ```Service has started.``` logline appears.
 
 
